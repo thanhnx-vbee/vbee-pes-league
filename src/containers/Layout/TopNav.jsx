@@ -30,9 +30,6 @@ const TopNav = () => {
             <Logo src={LogoImg} />
           </HeadLogo>
           <ListItem>
-            {/* <Active href="/">HOME</Active>
-            <SubItem href="/match">MATCH</SubItem>
-            <SubItem href="/result">RESULT</SubItem> */}
             <SubItem exact to="/">
               HOME
             </SubItem>
