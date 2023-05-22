@@ -1,9 +1,10 @@
+import axios from 'axios';
+
 const getMatchList = async () => {
-  const response = await fetch(
+  const response = await axios.get(
     'https://pes-vbee-server-v1.onrender.com/api/v1/match',
   );
-  const data = await response.json();
-  console.log(data);
+  const data = await response.data;
   return data;
 };
 

@@ -4,11 +4,11 @@ import getMatchList from '../../apis/matchAPI';
 const Component = () => {
   const [rows, setRows] = useState([]);
 
+  const fetchData = async () => {
+    const data = await getMatchList();
+    setRows(data.result);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getMatchList();
-      setRows(data.result);
-    };
     fetchData();
   }, []);
 
