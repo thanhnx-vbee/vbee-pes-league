@@ -4,11 +4,15 @@ import { NavLink } from 'react-router-dom';
 const Website = styled.div`
   display: flex;
   background: #eee;
+  flex-direction: column;
   .webList {
     display: flex;
     justify-content: space-around;
+    border-bottom: 2px solid #fff;
     .left {
       display: flex;
+      text-align: center;
+      align-items: center;
     }
     .center {
       display: flex;
@@ -35,10 +39,10 @@ const Website = styled.div`
 `;
 
 const Image = styled.img`
-  margin-top: 7px;
   margin-left: 30px;
   margin-right: 10px;
   height: 80px;
+  border-radius: 10px;
 `;
 
 const Button = styled(NavLink)`

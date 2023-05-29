@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getMatchList from '../../../apis/matchAPI';
 import { MatchCalendar, Image, Button } from './index.style';
+import CalendarComponent from '../Calendar/Calendar';
 import homeImg from '../img/thu_1.png';
 
 const MatchCalendarList = () => {
@@ -12,45 +13,17 @@ const MatchCalendarList = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const filteredRows = rows.filter((row) => row.date === '10/03');
+
   return (
     <div>
       <MatchCalendar>
         <div className="calendar">
-          <p className="live">LIVE</p>
-          <p className="circle">48</p>
-          <div className="subCalendarList">
-            <div className="subCalendar">
-              <p className="todayNumber">10</p>
-              <p className="today">Today</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">11</p>
-              <p className="day">Saturday</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">12</p>
-              <p className="day">Sunday</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">13</p>
-              <p className="day">Monday</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">14</p>
-              <p className="day">Tuesday</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">15</p>
-              <p className="day">Wednesday</p>
-            </div>
-            <div className="subCalendar">
-              <p className="number">16</p>
-              <p className="day">Thursday</p>
-            </div>
-          </div>
+          <CalendarComponent />
         </div>
         <div className="lists">
-          {rows.map((row) => (
+          {filteredRows.map((row) => (
             <div className="matchList">
               <div className="head">
                 <Image src={homeImg} />
