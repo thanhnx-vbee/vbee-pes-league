@@ -65,6 +65,4 @@ const Background = styled.img`
   max-width: 100vw;
 `;
 
-export {};
-
 export { Content, Background };
